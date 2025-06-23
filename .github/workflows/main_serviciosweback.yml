@@ -11,15 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout del código fuente
+    - name: Checkout del código
       uses: actions/checkout@v3
 
-    - name: Login a Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-    - name: Construir y desplegar imagen Docker a Azure Web App
+    - name: Construir y desplegar imagen Docker
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'serviciosweback'

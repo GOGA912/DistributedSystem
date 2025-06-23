@@ -1,7 +1,9 @@
 version: 1.0
-runtime: openjdk17
+runtime: java
 build:
   commands:
-    - ./mvnw clean package -DskipTests
-start:
+    - mvn clean install
+run:
   command: java -jar target/sistemabancario-0.0.1-SNAPSHOT.jar
+  network:
+    port: 8080
